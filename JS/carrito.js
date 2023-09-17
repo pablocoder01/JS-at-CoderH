@@ -76,12 +76,13 @@ function eliminarDelCarrito(e) {
     Toastify({
         text: "Producto eliminado",
         duration: 3000,
-        close: true,
+        close: false,
         gravity: "top", // `top` or `bottom`
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
-          background: "linear-gradient(to right, #ff5a5f, #d69ea0)",
+          background: "#e2e2e2",
+          color: "#000000",
           borderRadius: "2rem",
           textTransform: "uppercase",
           fontSize: ".75rem"

@@ -4,7 +4,7 @@
 
 /* variables de colores */
 :root {
-    --clr-main: #ff5a5f;
+    --clr-main: #424874;
     --clr-white: #ececec; 
     --clr-gray: #e2e2e2;
     --clr-red: #961818;
@@ -40,7 +40,8 @@ a {
 }
 
 aside {
-    padding: 2rem;
+    padding: 1.5rem;
+
     padding-right: 0;
     color: var(--clr-white);
     position: sticky;
@@ -53,8 +54,13 @@ aside {
 
 .logo {
     font-weight: 400;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: var(--clr-white);
+    
+}
+
+#logo-mobile{
+    margin-top: 2rem;
 }
 
 .menu {
@@ -136,14 +142,16 @@ main {
     backdrop-filter: blur(5px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     margin: 1rem;
-    margin-left: 0;
+
+    margin-left: 0rem;
+    
     border-radius: 2rem;
     padding: 3rem;
 }
 
 .titulo-principal {
     color: var(--clr-white);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .contenedor-productos {
@@ -203,7 +211,11 @@ main {
 
 .carrito-vacio,
 .carrito-comprado {
-    color: black;
+    color: var(--clr-gray);
+}
+
+#heart {
+    color: var(--clr-red);
 }
 
 .carrito-productos {
@@ -300,6 +312,9 @@ main {
 @media screen and (max-width: 850px){
     .contenedor-productos {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+    .logo {
+        font-size:medium;
     }
 }
 
