@@ -136,14 +136,7 @@ aside {
     color: var(--clr-white);
 }
 
-.texto-footer {
-    color: whitesmoke;
-    font-size: .85rem;
-    display: flex;
-    justify-content: space-evenly;
-    margin-left: -1.5rem;
-    
-}
+
 
 .credits {
     display: flex;
@@ -259,6 +252,22 @@ main {
     width: 4rem;
     border-radius: 1rem;
 }
+
+
+.carrito-contenedor-cantidadicon{
+    display: flex;
+    justify-content: space-between;
+}
+
+#carrito-cantidad-restar{
+    cursor: pointer;
+    color: var(--clr-main);
+}
+#carrito-cantidad-sumar{
+    cursor: pointer;
+    color: green;
+}
+
 
 .carrito-producto small {
     font-size: .75rem ;

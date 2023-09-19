@@ -22,7 +22,7 @@ function cargarProductosCarrito() {
     
         productosEnCarrito.forEach(producto => {
             const div = document.createElement("div");
-            
+
             div.classList.add("carrito-producto");
             div.innerHTML = `
                 <img class="carrito-producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
@@ -31,9 +31,14 @@ function cargarProductosCarrito() {
                     <h3>${producto.titulo}</h3>
                 </div>
                 <div class="carrito-producto-cantidad">
-                    <small>Cantidad</small>
-                    <p>${producto.cantidad}</p>
-                </div>
+
+                    
+
+                <small>Cantidad</small>
+                <p id="carrito-contenedor-cantidadicon" class="carrito-contenedor-cantidadicon"><i id="carrito-cantidad-restar" class="bi bi-file-minus"></i>${producto.cantidad}<i id="carrito-cantidad-sumar" class="bi bi-file-plus"></i></p>
+                
+                
+                    </div>
                 <div class="carrito-producto-precio">
                     <small>Precio</small>
                     <p>$${producto.precio}</p>
