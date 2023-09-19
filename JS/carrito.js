@@ -21,8 +21,8 @@ function cargarProductosCarrito() {
         contenedorCarritoProductos.innerHTML = "";
     
         productosEnCarrito.forEach(producto => {
-    
             const div = document.createElement("div");
+            
             div.classList.add("carrito-producto");
             div.innerHTML = `
                 <img class="carrito-producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
@@ -81,8 +81,8 @@ function eliminarDelCarrito(e) {
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
-          background: "#e2e2e2",
-          color: "#000000",
+            background: "#e2e2e2",
+            color: "#000000",
           borderRadius: "2rem",
           textTransform: "uppercase",
           fontSize: ".75rem"

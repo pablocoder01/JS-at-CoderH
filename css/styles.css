@@ -4,11 +4,14 @@
 
 /* variables de colores */
 :root {
-    --clr-main: #424874;
+    --clr-main: #EB5160;
     --clr-white: #ececec; 
     --clr-gray: #e2e2e2;
     --clr-red: #961818;
+    --clr-blured: rgba(231, 19, 19, 0.3);
+    --clr-Mp: #009ee3;
 }
+
 
 /* settings grales */
 * {
@@ -36,12 +39,15 @@ a {
 .wrapper {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    background-color: var(--clr-main);
+    background: #CB356B;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #BD3F32, #CB356B);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #BD3F32, #CB356B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
 }
 
 aside {
     padding: 1.5rem;
-
     padding-right: 0;
     color: var(--clr-white);
     position: sticky;
@@ -52,16 +58,14 @@ aside {
     justify-content: space-between;
 }
 
-.logo {
-    font-weight: 400;
-    font-size: 1.2rem;
-    color: var(--clr-white);
-    
-}
-
-#logo-mobile{
+.aside-logo-main,
+.aside-logo-carrito{
+    font-size:large;
     margin-top: 2rem;
+    margin-left: 6rem;
+    font-weight: 600;
 }
+    
 
 .menu {
     display: flex;
@@ -100,7 +104,7 @@ aside {
     top: 100%;
     right: 0;
     background-color: transparent;
-    border-top-right-radius: .5rem;
+    border-top-right-radius: 4rem;
     box-shadow: 0 -1rem 0 var(--clr-white);
 }
 
@@ -112,7 +116,7 @@ aside {
     bottom: 100%;
     right: 0;
     background-color: transparent;
-    border-bottom-right-radius: .5rem;
+    border-bottom-right-radius: 4rem;
     box-shadow: 0 1rem 0 var(--clr-white);
 }
 
@@ -135,16 +139,26 @@ aside {
 .texto-footer {
     color: whitesmoke;
     font-size: .85rem;
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: -1.5rem;
+    
+}
+
+.credits {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: -1.5rem;
+    margin-bottom: 1rem;
 }
 
 main {
     background-color: rgba(255, 255, 255, 0.425);
-    backdrop-filter: blur(5px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: solid .3rem;
+    border-color: var(--clr-white);
     margin: 1rem;
-
-    margin-left: 0rem;
-    
+    margin-left: 0rem; 
     border-radius: 2rem;
     padding: 3rem;
 }
@@ -152,6 +166,7 @@ main {
 .titulo-principal {
     color: var(--clr-white);
     margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 .contenedor-productos {
@@ -159,6 +174,7 @@ main {
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
 }
+
 
 .producto-imagen {
     max-width: 100%;
@@ -170,14 +186,19 @@ main {
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(5px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    color: rgb(0, 0, 0);
+    color: black;
     padding: .5rem;
-    border-radius: 0rem 0rem 1rem 1rem;
-    margin-top: -.3rem;
+    border-radius: 1rem 1rem 1rem 1rem;
+    margin-top: -2rem;
     position: relative;
     display: flex;
     flex-direction: column;
     gap: .25rem;
+    font-weight: 600;
+}
+
+.producto:hover{
+    scale: 1;
 }
 
 .producto-titulo {
@@ -259,7 +280,7 @@ main {
     border: 0;
     background-color: var(--clr-gray);
     padding: 1rem;
-    border-radius: 1rem;
+    border-radius: .5rem;
     color: black;
     text-transform: uppercase;
     cursor: pointer;
@@ -276,20 +297,21 @@ main {
     padding: 1rem;
     color: black;
     text-transform: uppercase;
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
     gap: 1rem;
 }
 
 .carrito-acciones-comprar {
     border: 0;
-    background-color: var(--clr-main);
+    background-color: var(--clr-Mp);
+    font-weight: 600;
     padding: 1rem;
-    color: var(--clr-white);
+    color: white;
     text-transform: uppercase;
     cursor: pointer;
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
 }
 
 .header-mobile {
@@ -309,14 +331,32 @@ main {
 
 /*** Media Queries ***/
 
-@media screen and (max-width: 850px){
+@media screen and (max-width: 1440px) {
+    .aside-logo-main,
+    .aside-logo-carrito{
+        font-size:large;
+        margin-top: 2rem;
+        margin-left: 2.35rem;
+    }}
+
+@media screen and (max-width: 1024px) {
+.aside-logo-main,
+.aside-logo-carrito{
+    font-size:large;
+    margin-top: 2rem;
+    margin-left: .3rem;
+}}
+
+@media screen and (max-width: 850px) {
     .contenedor-productos {
         grid-template-columns: 1fr 1fr 1fr;
     }
-    .logo {
-        font-size:medium;
-    }
-}
+    .aside-logo-main,
+    .aside-logo-carrito{
+    font-size:small;
+    margin-top: 2rem;
+
+}}
 
 @media screen and (max-width: 675px){
     .contenedor-productos {
@@ -344,8 +384,40 @@ main {
 
     .aside-visible{
         transform: translateX(0);
+        transition: 1.5s;
         opacity: 1;
         visibility: visible;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background-color: var(--clr-blured);
+        backdrop-filter: blur(6px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        
+    }
+
+    #aside-logo-carrito,
+    #aside-logo-main   {
+        margin-top: 2rem;
+        font-size: medium;
+        justify-content:center;
+        margin-left: 1.5rem;
+    }
+
+    .logo-main,
+    .logo-carrito{
+        font-weight: 400;
+        font-size: 1.2rem;
+        color: var(--clr-white);
+}
+    
+
+    #credits{
+        display: flex;
+        justify-content: space-evenly;
+        margin-left: -1.5rem;
+        margin-bottom: 1rem;
     }
 
     .boton-menu.active::before,
@@ -356,7 +428,8 @@ main {
     main {
         margin: 1rem;
         margin-top: 0;
-        padding: 2rem;
+        padding: 2rem;     
+         ;
     }
 
     .contenedor-productos{
@@ -367,7 +440,7 @@ main {
         padding: 1rem;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: center;        
     }
     .header-mobile -logo {
         color: var(--clr-gray);        

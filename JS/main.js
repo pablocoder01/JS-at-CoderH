@@ -15,17 +15,22 @@ const tituloPrincipal = document.querySelector("#titulo-principal");
 let botonesAgregar =  document.querySelectorAll(".producto-agregar");
 const numerito = document.querySelector("#numerito");
 
+
+
 /* Debajo cre una funcion llamada cargarProductos que contiene un forEach que lo que hace es recorrer el array de arriba y en simultaneo crea un div con una classlist y un innerHTML que contiene una imagen otro div, un h3 un p y un boton. */
+
 
 
 function cargarProductos(productosElegidos) {
 
+    
 
 /* Debajo - primero vacia todos los productos elegidos para que luego no se dupliquen */
     contenedorProductos.innerHTML = "";
 
     productosElegidos.forEach(producto => {
         const div = document.createElement("div");
+        div.className = "card-producto";
         div.classList.add("producto");
         div.innerHTML = `
             <img class="producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
@@ -35,14 +40,23 @@ function cargarProductos(productosElegidos) {
                 <button class="producto-agregar" id="${producto.id}">Agregar</button>
             </div>
         `;
-
         contenedorProductos.append(div);
+
+        VanillaTilt.init(document.querySelectorAll(".card-producto"), {
+            max: 25,
+            speed: 400
+        });
+
     })
     actualizarBotonesAgregar();
 }
 
+
+
+
 /* Debajo - ahora llamé a la funcion cargarProductos que ejecuta la funcion de arriba y despliega en la pagina los productos*/
 cargarProductos(productos);
+
 
 
 /* Debajo - creando un (e) evento click para cambiar de categoria pero que tambien elimine el active de la categoria previa*/ 
@@ -84,6 +98,7 @@ if (productosEnCarritoLS) {
 } else {
     productosEnCarrito = [];
 }
+
 
 
 function agregarAlCarrito(e) {
@@ -130,7 +145,8 @@ function actualizarNumerito() {
 
 
 
-
+	
+	
 
 
 

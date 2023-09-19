@@ -14,7 +14,7 @@
             <div class="wrapper">
 <!--Contenedor lateral con un header y debajo los botones de productos y uno de carrito + imagen de cantidad de prod-->
                 <header class="header-mobile">
-                    <h1 class="logo"><i class="bi bi-shop"></i> CompraSimple</h1>
+                    <h1 class="logo-main"><i class="bi bi-shop"></i> Compra Simple</h1>
                     <button class="open-menu" id="open-menu">
                         <i class="bi bi-list"></i>
                     </button>
@@ -24,7 +24,7 @@
                     <i class="bi bi-x"></i>
                 </button>
                 <header>
-                    <h1 id="logo-mobile" class="logo"><i class="bi bi-shop"></i> CompraSimple</h1>
+                    <h1 id="aside-logo-main" class="aside-logo-main"> <i class="bi bi-shop"> </i>Compra Simple</h1>
                 </header>
                 <nav>
                     <ul>
@@ -48,22 +48,25 @@
                     </ul>
                 </nav>
                 <footer>
+                    <p id="credits" class="credits">@pabloCoder</p>
                     <p class="texto-footer">
-                        @pabloCoder
+                        <i class="bi bi-instagram"></i> <i class="bi bi-twitter-x"></i> <i class="bi bi-whatsapp"></i>  
                     </p>
                 </footer>
             </aside>
 <!--Contenedor Aside para los laterales-->
             <main>
-                <h2 id="titulo-principal" class="titulo-principal">Todos los productos</h2>
-                <div id="contenedor-productos" class="contenedor-productos"> 
+                <h2 id="titulo-principal" class="titulo-principal" >Todos los productos</h2>
+                <div id="contenedor-productos"  class="contenedor-productos">                    
                     <!-- Esto se rellena con JS-->
+
                 </div>
             </main>
         </div>
 
+        
+        <script type="text/javascript" src="./JS/vanilla-tilt.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-        <script src="vanilla-tilt.js"></script>
         <script src="./JS/main.js"></script>
         <script src="./JS/menu.js"></script>
     </body>
